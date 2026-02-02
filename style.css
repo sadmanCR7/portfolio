@@ -387,93 +387,84 @@ section {
 .repo-links a:hover {
     color: var(--primary-color);
 }
-/* --- Extra-Curricular Activities Section --- */
+/* --- Co-Curricular Activities Section Styling --- */
 
+/* 1. Wrapper to hold the cards */
 .activities-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* Space between cards */
-    max-width: 900px; /* Limits width so lines don't get too long */
+    gap: 2rem;
+    max-width: 800px;
     margin: 0 auto;
 }
 
+/* 2. The Card Box */
 .activity-card {
-    background: var(--card-bg); /* Uses your existing dark theme */
+    background: var(--card-bg); /* Dark background */
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-/* The Blue Left Border Strip */
+/* 3. The Blue Left Border */
 .activity-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 6px; 
+    width: 5px; 
     height: 100%;
-    background-color: var(--primary-color); /* Your theme blue */
+    background-color: var(--primary-color); /* Blue strip */
 }
 
+/* Hover Effect */
 .activity-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-/* --- Header (Organization Name) --- */
+/* 4. Header Alignment (Icon + Title) */
 .activity-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 1.5rem;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
+/* 5. Fix the Icon Size and Color */
 .activity-header i {
     font-size: 1.5rem;
     color: var(--primary-color);
+    min-width: 30px; /* Ensures icon has space */
+    text-align: center;
 }
 
 .activity-header h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--primary-color); /* Blue text like screenshot */
     margin: 0;
+    font-size: 1.3rem;
+    color: var(--primary-color);
 }
 
-/* --- Role & Date --- */
-.role-block {
-    padding-left: 5px; /* Slight indent */
-}
-
-.role-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator */
-    padding-bottom: 10px;
-}
-
-.role-info h4 {
+/* 6. Role and Text Styling */
+.role-block h4 {
     font-size: 1.1rem;
+    margin-bottom: 5px;
     color: var(--text-color);
-    font-weight: 600;
 }
 
 .role-date {
     font-size: 0.9rem;
     color: var(--secondary-color);
+    display: block;
+    margin-bottom: 10px;
     font-style: italic;
 }
 
-/* --- Bullet Points --- */
 .activity-list {
-    list-style-type: none; /* Remove default bullets */
+    list-style: none;
     padding-left: 10px;
 }
 
@@ -481,33 +472,15 @@ section {
     position: relative;
     padding-left: 20px;
     margin-bottom: 8px;
-    color: var(--secondary-color); /* Grayish text */
-    font-size: 0.95rem;
-    line-height: 1.6;
+    color: var(--secondary-color);
 }
 
-/* Custom small bullet dots */
 .activity-list li::before {
     content: '•';
     color: var(--primary-color);
-    font-weight: bold;
     position: absolute;
     left: 0;
-    font-size: 1.2rem;
-    line-height: 1rem;
-}
-
-/* Dark Mode Specific Adjustments to match screenshot perfectly */
-[data-theme="dark"] .activity-card {
-    background: #1e293b; /* Dark Slate Blue/Grey */
-}
-
-[data-theme="dark"] .role-info h4 {
-    color: #f1f5f9; /* Bright White */
-}
-
-[data-theme="dark"] .activity-list li {
-    color: #cbd5e1; /* Light Grey */
+    font-weight: bold;
 }
 
 /* --- Contact Section --- */
