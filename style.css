@@ -9,6 +9,102 @@
     --shadow: 0 4px 6px rgba(0,0,0,0.1);
     --transition: all 0.3s ease;
 }
+/* --- Co-Curricular Activities Section Styling --- */
+
+/* 1. Wrapper to hold the cards */
+.activities-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 2. The Card Box */
+.activity-card {
+    background: var(--card-bg); /* Dark background */
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* 3. The Blue Left Border */
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px; 
+    height: 100%;
+    background-color: var(--primary-color); /* Blue strip */
+}
+
+/* Hover Effect */
+.activity-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 4. Header Alignment (Icon + Title) */
+.activity-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* 5. Fix the Icon Size and Color */
+.activity-header i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    min-width: 30px; /* Ensures icon has space */
+    text-align: center;
+}
+
+.activity-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+/* 6. Role and Text Styling */
+.role-block h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.role-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.activity-list {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.activity-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+}
+
+.activity-list li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
 
 [data-theme="dark"] {
     --bg-color: #121212;
@@ -386,101 +482,6 @@ section {
 
 .repo-links a:hover {
     color: var(--primary-color);
-}
-/* --- Co-Curricular Activities Section Styling --- */
-
-/* 1. Wrapper to hold the cards */
-.activities-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* 2. The Card Box */
-.activity-card {
-    background: var(--card-bg); /* Dark background */
-    padding: 2rem;
-    border-radius: 12px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-/* 3. The Blue Left Border */
-.activity-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px; 
-    height: 100%;
-    background-color: var(--primary-color); /* Blue strip */
-}
-
-/* Hover Effect */
-.activity-card:hover {
-    transform: translateY(-5px);
-}
-
-/* 4. Header Alignment (Icon + Title) */
-.activity-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-/* 5. Fix the Icon Size and Color */
-.activity-header i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    min-width: 30px; /* Ensures icon has space */
-    text-align: center;
-}
-
-.activity-header h3 {
-    margin: 0;
-    font-size: 1.3rem;
-    color: var(--primary-color);
-}
-
-/* 6. Role and Text Styling */
-.role-block h4 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: var(--text-color);
-}
-
-.role-date {
-    font-size: 0.9rem;
-    color: var(--secondary-color);
-    display: block;
-    margin-bottom: 10px;
-    font-style: italic;
-}
-
-.activity-list {
-    list-style: none;
-    padding-left: 10px;
-}
-
-.activity-list li {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
-    color: var(--secondary-color);
-}
-
-.activity-list li::before {
-    content: '•';
-    color: var(--primary-color);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
 }
 
 /* --- Contact Section --- */
