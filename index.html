@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio of a ICE student">
+    <title>Sadman Sakib| Portfolio</title>
+    
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#home" class="logo">
+        Sadman's<span>Portfolio</span>
+    </a>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-controls">
+           <button id="theme-toggle" aria-label="Toggle Dark Mode">
+    <!-- Default icon is now Sun (because Dark Mode is active) -->
+    <i class="fas fa-sun"></i>
+</button>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container home-content hidden">
+            <h3>Hello, I'm</h3>
+            <h1>Sadman Sakib</h1>
+            <h2 class="text-gradient">ICE undergraduate student</h2>
+
+
+            <p>I am a third year undergraduate student in Information and Communication Engineering of Bangladesh University of Professionals(BUP).I have strong passion in research,machine learning and web development. </p>
+
+
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+            <div class="socials">
+                <a href="https://github.com/sadmanCR7"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sadman-sakib-cr7/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/8801603491851"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/share/1BxUU5KWvE/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container hidden">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-wrapper">
+                <div class="about-img">
+                    <!-- Replace with your image -->
+                    <img src="assets/profile.jpeg">
+                </div>
+                <div class="about-text">
+                    <h3>Who am I?</h3>
+                    <p>I am an enthusiastic IT engineering student with a strong passion for technology,problem solving and continuous learning.Throughout my academic journey,I have developed a solid foundation in Object Oriented Programming,Data Structures and algorithms,Digital Communication,Database,Computer networks with hands on experience in Java,python,SQL,c++ and matlab.I have also build a solid foundation in frontend development with html,css and javascript</p>
+                   <!-- <div class="highlights">
+                        <div class="box">
+                            <h4>02+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="box">
+                            <h4>10+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                    </div>
+                  -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+<section id="education">
+    <div class="container hidden">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+            
+            <!-- 1. BUP Card -->
+            <div class="education-card">
+                <!-- Wrapper for Side-by-Side Layout -->
+                <div class="edu-flex-row">
+                    <!-- Logo Container -->
+                    <div class="edu-logo-circle">
+                        <img src="assets/bup-logo.png" alt="BUP Logo">
+                    </div>
+                    <!-- Text Container -->
+                    <div class="edu-text">
+                        <h3>B.Sc. in Information and Communication Engineering</h3>
+                        <p class="institute">Bangladesh University of Professionals (BUP)</p>
+                    </div>
+                </div>
+                
+                <div class="edu-divider"></div>
+                
+                <div class="edu-stats">
+                    <span class="year"><i class="far fa-calendar-alt"></i> 2023 - 2027</span>
+                    <span class="grade"><i class="fas fa-award"></i> CGPA: 3.47/4.00(Ongoing)</span>
+                </div>
+            </div>
+
+            <!-- 2. BCIC Card -->
+            <div class="education-card">
+                <div class="edu-flex-row">
+                    <div class="edu-logo-circle">
+                        <img src="assets/bcic-logo.png" alt="BCIC Logo">
+                    </div>
+                    <div class="edu-text">
+                        <h3>Higher Secondary Certificate (HSC)</h3>
+                        <p class="institute">BCIC College</p>
+                    </div>
+                </div>
+
+                <div class="edu-divider"></div>
+
+                <div class="edu-stats">
+                    <span class="year"><i class="far fa-calendar-alt"></i> 2020 - 2022</span>
+                    <span class="grade"><i class="fas fa-star"></i> GPA: 5.00/5.00</span>
+                </div>
+            </div>
+
+            <!-- 3. Monipur Card -->
+            <div class="education-card">
+                <div class="edu-flex-row">
+                    <div class="edu-logo-circle">
+                        <img src="assets/monipur-logo" alt="Monipur Logo">
+                    </div>
+                    <div class="edu-text">
+                        <h3>Secondary School Certificate (SSC)</h3>
+                        <p class="institute">Monipur High School & College</p>
+                    </div>
+                </div>
+
+                <div class="edu-divider"></div>
+
+                <div class="edu-stats">
+                    <span class="year"><i class="far fa-calendar-alt"></i> 2018 - 2020</span>
+                    <span class="grade"><i class="fas fa-star"></i> GPA: 5.00/5.00</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Core Competencies Section -->
+<section id="skills">
+    <div class="container hidden">
+        <h2 class="section-title">Core Skills</h2>
+        
+        <div class="skills-wrapper">
+            
+            <!-- Category 1: Languages -->
+            <div class="skill-category">
+                <h3>Languages:</h3>
+                <div class="skill-tags">
+                    <span>Python</span>
+                    <span>Java</span>
+                    <span>SQL</span>
+                    <span>JavaScript</span>
+                    <span>PHP</span>
+                    <span>HTML/CSS</span>
+                    <span>C++</span>
+                </div>
+            </div>
+
+            <!-- Category 2: Libraries & Frameworks -->
+            <div class="skill-category">
+                <h3>Libraries & Frameworks:</h3>
+                <div class="skill-tags">
+                    <span>Django</span>
+                    <span>Laravel</span>
+                    <span>react.js</span>
+                </div>
+            </div>
+
+            <!-- Category 3: Developer Tools -->
+            <div class="skill-category">
+                <h3>Developer Tools:</h3>
+                <div class="skill-tags">
+                    <span>PyCharm</span>
+                    <span>VSCode</span>
+                    <span>MATLAB</span>
+                    <span>Canva</span>
+                    <span>MS Word</span>
+                    <span>MS Xcel</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+ <!-- Projects Section -->
+<section id="projects">
+    <div class="container hidden">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            
+            <!-- Project 1: Flight Management System-->
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="assets/project1.png" alt="Airplane Management System">
+                </div>
+                <div class="card-content">
+                    <h3>AeroPulse: Flight Booking & Management System</h3>
+                    <p>AeroPulse is a full-stack flight booking and management platform built with Python, Django, and MySQL, designed for a smooth and modern user experience. It features advanced flight search, multi-step user registration, a personalized passenger dashboard, and a complete booking flow with e-tickets and invoices.
+A standout feature is the Global Price Map, an interactive visualization using Leaflet.js that shows worldwide travel affordability, turning flight discovery into a visual experience.
+Built on a scalable, 3NF-compliant database, AeroPulse is a strong foundation for real-world OTA systems.</p>
+                    
+                    <div class="tech-tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>MySQL</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>javascript</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="#" target="_blank" class="btn-live">
+                            <i class="fas fa-external-link-alt"></i> Live View
+                        </a>
+                        <div class="repo-links">
+                             <a href="https://github.com/sadmanCR7/Aeropulse-Flight-Booking-Management-System" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: OncoFusion-Ai -->
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="assets/project2.png" alt="OncoFusion">
+                </div>
+                <div class="card-content">
+                    <h3>OncoFusion Ai</h3>
+                    <p>I had built a prototype OncoFusion-AI which use HADE algorithm and gives a best solution to a cancer patient. A cancer patients often don't know when they should take chemotherapy doses and what are the toxicity levels. Our project use Hybrid Adaptive Dosing Engine(HADE) which is an AI Framework which decides the most safest and efficient solution for a chemotherapy patient .This prototype is built by using Figma and this is just a model that we want to work on it.</p>
+                    
+                    <div class="tech-tags">
+                        <span>TypeScript</span>
+                        <span>Figma</span>
+                        <span>HTML</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://shape-melody-53145627.figma.site/" target="_blank" class="btn-live">
+                            <i class="fas fa-external-link-alt"></i> Live View
+                        </a>
+                        <div class="repo-links">
+                            <a href="https://github.com/sadmanCR7/OncoFusion-AI" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Tic-Tac-Toe -->
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="assets/project3.png" alt="Tic-Tac-Toe">
+                </div>
+                <div class="card-content">
+                    <h3>Tic-Tac-Toe Project</h3>
+                    <p>A two-player Tic-Tac-Toe game built in Java following Object-Oriented Programming principles and the MVC architecture. It supports both console and GUI interfaces, ensuring fair gameplay and a user-friendly experience. This project reflects strong fundamentals in Java and software design.</p>
+                    
+                    <div class="tech-tags">
+                        <span>OOP</span>
+                        <span>GUI</span>
+                        <span>MVC</span>
+                        <span>JDBC</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="#" target="_blank" class="btn-live">
+                            <i class="fas fa-external-link-alt"></i> Live View
+                        </a>
+                        <div class="repo-links">
+                            <a href="https://github.com/sadmanCR7/Tic-Tac-Toe-Project" target="_blank"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Computer networks -->
+            <div class="project-card">
+                <div class="card-image">
+                    <img src="assets/project4.png" alt="DCCN">
+                </div>
+                <div class="card-content">
+                    <h3>Railway Station Connectivity Framework</h3>
+                    <p>A network simulation project built using Cisco Packet Tracer, demonstrating how multiple railway stations can be interconnected through IP addressing, subnetting, and static routing. This project showcases practical understanding of real-world network design and core computer networking concepts.</p>
+                    
+                    <div class="tech-tags">
+                        <span>Cisco Packet Tracer</span>
+                        <span>Data Communication</span>
+                        <span>IP addressing</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="#" target="_blank" class="btn-live">
+                            <i class="fas fa-external-link-alt"></i> Live View
+                        </a>
+                        <div class="repo-links">
+                            <a href="https://github.com/sadmanCR7/Railway-Station-Connectivity-Framework" target="_blank"><i class="fab fa-github"></i> Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Extra-Curricular Activities Section -->
+<section id="activities">
+    <div class="container hidden">
+        <h2 class="section-title">Co-Curricular Activities</h2>
+        
+        <div class="activities-wrapper">
+            
+            <!-- Activity 1: IEEE BUP WIE -->
+            <div class="activity-card">
+                <div class="activity-header">
+                    <i class="fas fa-users"></i>
+                    <h3>IEEE BUP WIE Student Branch Affinity Group</h3>
+                </div>
+                
+                <div class="role-block">
+                    <div class="role-info">
+                        <h4>Sub-Executive Member</h4>
+                        <span class="role-date">2023 - Present</span> <!-- Update date if needed -->
+                    </div>
+                    <ul class="activity-list">
+                        <li>Active member of the Women in Engineering (WIE) community.</li>
+                        <li>Assisted in organizing workshops and seminars to promote women in tech.</li>
+                        <li>Coordinated team tasks and managed event logistics.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Activity 2: IEEE Branchfest -->
+            <div class="activity-card">
+                <div class="activity-header">
+                    <i class="fas fa-trophy"></i>
+                    <h3>IEEE Branchfest 2025</h3>
+                </div>
+                
+                <div class="role-block">
+                    <div class="role-info">
+                        <h4>Contest Participant</h4>
+                        <span class="role-date">2025</span>
+                    </div>
+                    <ul class="activity-list">
+                        <li>Participated in the competitive Abstract Submission Contest.</li>
+                        <li>Presented innovative ideas and research concepts to a panel of judges.</li>
+                        <li>Engaged in technical networking sessions with peers and industry experts.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container hidden">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sakib.ssadman@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>South Pirerbag,Mirpur Dhaka-1216</span>
+                    </div>
+                    <div class="info-item">
+                       <i class="fa-solid fa-phone"></i>
+                        <span>+8801603491851</span>
+                    </div>
+                    
+                    <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+                </div>
+
+              <form id="contact-form">
+    <!-- Name Field -->
+    <div class="form-group">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <small class="error-msg">Name is required</small>
+    </div>
+    
+    <!-- Email Field -->
+    <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <small class="error-msg">Valid email is required</small>
+    </div>
+
+    <!-- NEW: Subject Field -->
+    <div class="form-group">
+        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+        <small class="error-msg">Subject is required</small>
+    </div>
+    
+    <!-- Message Field -->
+    <div class="form-group">
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <small class="error-msg">Message cannot be empty</small>
+    </div>
+    
+    <!-- Submit Button -->
+    <button type="submit" class="btn-submit" id="submit-btn">Submit</button>
+</form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>copyright &copy;2026 All rights reserved | by Sadman Sakib</p>
+    </footer>
+
+    <!-- JS Link -->
+    <script src="script.js"></script>
+</body>
+</html>

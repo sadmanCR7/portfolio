@@ -1,0 +1,653 @@
+/* --- Variables & Reset --- */
+:root {
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --primary-color: #4a90e2;
+    --secondary-color: #6c757d;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #64b5f6;
+    --secondary-color: #a0a0a0;
+    --card-bg: rgba(30, 30, 30, 0.8);
+    --nav-bg: rgba(18, 18, 18, 0.9);
+    --shadow: 0 4px 6px rgba(0,0,0,0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* --- Navbar --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none; /* Removes the link underline */
+    color: var(--text-color); /* Keeps it White/Dark depending on theme */
+    cursor: pointer;
+    display: flex; /* Keeps the text aligned if you add an icon later */
+    align-items: center;
+}
+
+/* The Blue Part */
+.logo span {
+    color: var(--primary-color);
+}
+
+/* Optional: Hover effect */
+.logo:hover {
+    opacity: 0.9;
+}
+
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary-color); font-weight: 600; }
+
+.nav-controls { display: flex; align-items: center; gap: 1rem; }
+#theme-toggle { background: none; border: none; cursor: pointer; color: var(--text-color); font-size: 1.2rem; }
+
+/* Hamburger Menu */
+.hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.line { width: 25px; height: 3px; background: var(--text-color); transition: var(--transition); }
+
+/* --- General Section Styles --- */
+section {
+    padding: 100px 5% 50px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Home Section --- */
+.home-content { text-align: center; max-width: 800px; margin: 0 auto; }
+.home-content h1 { font-size: 4rem; margin: 10px 0; }
+.text-gradient {
+    background: linear-gradient(to right, var(--primary-color), #8e44ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-buttons { display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.btn-primary { background: var(--primary-color); color: white; }
+.btn-primary:hover { background: transparent; color: var(--primary-color); }
+
+.btn-secondary { background: transparent; color: var(--text-color); border-color: var(--text-color); }
+.btn-secondary:hover { background: var(--text-color); color: var(--bg-color); }
+
+.socials { display: flex; gap: 1.5rem; justify-content: center; font-size: 1.5rem; }
+.socials a:hover { color: var(--primary-color); transform: translateY(-3px); }
+
+/* --- About Section --- */
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.highlights { display: flex; gap: 2rem; margin-top: 2rem; }
+.box h4 { font-size: 2rem; color: var(--primary-color); }
+/* --- Education Section --- */
+/* --- Education Layout Fix --- */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+}
+
+.education-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* The Blue Left Border */
+.education-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+/* 1. FLEX CONTAINER: Forces Logo and Text to sit side-by-side */
+.edu-flex-row {
+    display: flex !important;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* 2. LOGO CONTAINER: Forces the circle shape and size */
+.edu-logo-circle {
+    width: 60px !important;       /* Force fixed width */
+    height: 60px !important;      /* Force fixed height */
+    min-width: 60px;              /* Prevent shrinking */
+    background: #fff;
+    border-radius: 50%;           /* Make it round */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(0,0,0,0.1);
+    flex-shrink: 0;               /* Critical: Prevents logo from getting squished */
+}
+
+/* 3. IMAGE: Forces image to fit inside the circle */
+.edu-logo-circle img {
+    width: 70%;                   /* Logo size inside the white circle */
+    height: 70%;
+    object-fit: contain;
+}
+
+/* Text Styling */
+.edu-text h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.edu-text .institute {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+/* Divider & Bottom Stats */
+.edu-divider {
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+    margin: 10px 0;
+}
+
+[data-theme="dark"] .edu-divider {
+    background: rgba(255,255,255,0.1);
+}
+
+.edu-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.edu-stats span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.grade {
+    background: rgba(37, 99, 235, 0.1);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+/* --- Projects Section Redesign --- */
+
+.projects-grid {
+    display: grid;
+    /* Creates a responsive grid. 
+       minmax(350px, 1fr) means cards won't get smaller than 350px 
+       but will stretch to fill space. */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 2.5rem;
+    padding: 20px 0;
+}
+
+.project-card {
+    background: var(--card-bg); /* Uses your existing dark/light theme variable */
+    border-radius: 16px;
+    overflow: hidden; /* Ensures image corners stay rounded */
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column; /* Stacks image, text, and buttons vertically */
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+}
+
+/* Image styling */
+.card-image img {
+    width: 100%;
+    height: 220px; /* Fixed height for uniformity */
+    object-fit: cover; /* Crops image nicely without distortion */
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Content Area */
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1; /* Pushes buttons to the bottom if text is short */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Tech Tags (The blue chips) */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.tech-tags span {
+    background: rgba(37, 99, 235, 0.15); /* Low opacity blue background */
+    color: #3b82f6; /* Bright blue text */
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Dark mode adjustment for tags so they glow */
+[data-theme="dark"] .tech-tags span {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+}
+
+/* Bottom Actions Area */
+.card-actions {
+    margin-top: auto; /* Pushes this section to the very bottom */
+}
+
+/* The Big Blue Button */
+.btn-live {
+    display: block;
+    width: 100%;
+    background-color: #2563eb; /* Royal Blue */
+    color: white;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-live:hover {
+    background-color: #1d4ed8; /* Darker blue on hover */
+    color: white;
+}
+
+/* Client / Server Links */
+.repo-links {
+    display: flex;
+    justify-content: space-around; /* Spreads them out nicely */
+    padding-top: 10px;
+}
+
+.repo-links a {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.repo-links a:hover {
+    color: var(--primary-color);
+}
+/* --- Extra-Curricular Activities Section --- */
+
+.activities-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Space between cards */
+    max-width: 900px; /* Limits width so lines don't get too long */
+    margin: 0 auto;
+}
+
+.activity-card {
+    background: var(--card-bg); /* Uses your existing dark theme */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+/* The Blue Left Border Strip */
+.activity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px; 
+    height: 100%;
+    background-color: var(--primary-color); /* Your theme blue */
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* --- Header (Organization Name) --- */
+.activity-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.activity-header i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.activity-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color); /* Blue text like screenshot */
+    margin: 0;
+}
+
+/* --- Role & Date --- */
+.role-block {
+    padding-left: 5px; /* Slight indent */
+}
+
+.role-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle separator */
+    padding-bottom: 10px;
+}
+
+.role-info h4 {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.role-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-style: italic;
+}
+
+/* --- Bullet Points --- */
+.activity-list {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 10px;
+}
+
+.activity-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--secondary-color); /* Grayish text */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Custom small bullet dots */
+.activity-list li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1rem;
+}
+
+/* Dark Mode Specific Adjustments to match screenshot perfectly */
+[data-theme="dark"] .activity-card {
+    background: #1e293b; /* Dark Slate Blue/Grey */
+}
+
+[data-theme="dark"] .role-info h4 {
+    color: #f1f5f9; /* Bright White */
+}
+
+[data-theme="dark"] .activity-list li {
+    color: #cbd5e1; /* Light Grey */
+}
+
+/* --- Contact Section --- */
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+/* --- Contact Section Container --- */
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- The Form Card --- */
+#contact-form {
+    background-color: #1a2230; /* Dark Navy Blue Card Background */
+    padding: 2.5rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px; /* Limits width like the image */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Spacing between fields */
+}
+
+/* --- Input Fields & Textarea --- */
+.form-group {
+    position: relative;
+    width: 100%;
+}
+
+input, textarea {
+    width: 100%;
+    background-color: #0f1520; /* Very Dark Input Background */
+    border: 1px solid #2e3a50; /* Subtle Blue-Grey Border */
+    padding: 14px 18px;
+    border-radius: 8px;
+    color: #e2e8f0; /* Light Text Color */
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Focus Effect (Glow) */
+input:focus, textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Placeholder Color */
+::placeholder {
+    color: #64748b;
+}
+
+/* --- Error Message Styling --- */
+.error-msg {
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+    text-align: left;
+}
+
+.form-group.error input, 
+.form-group.error textarea {
+    border-color: #ef4444;
+}
+
+.form-group.error .error-msg {
+    display: block;
+}
+
+/* --- Submit Button --- */
+.btn-submit {
+    width: 100%;
+    background-color: #2563eb; /* Bright Royal Blue */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-submit:disabled {
+    background-color: #4b5563;
+    cursor: not-allowed;
+}
+
+/* --- Light Mode Override (Optional) --- */
+/* If you want this specific form to ALWAYS be dark 
+   even in light mode, you don't need to do anything else. 
+   It will look exactly like the image regardless of theme. */
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--nav-bg);
+    margin-top: 2rem;
+}
+
+/* --- Animations --- */
+.hidden { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
+.show { opacity: 1; transform: translateY(0); }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        height: 100vh;
+        background: var(--nav-bg);
+        flex-direction: column;
+        width: 70%;
+        transform: translateX(100%);
+        transition: var(--transition);
+        padding-top: 3rem;
+        align-items: center;
+    }
+
+    .nav-links.nav-active { transform: translateX(0); }
+    .hamburger { display: flex; }
+    
+    .home-content h1 { font-size: 2.5rem; }
+    .about-wrapper { text-align: center; }
+}
