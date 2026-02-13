@@ -359,6 +359,22 @@ section {
     font-weight: 600;
     color: var(--text-color);
 }
+/* --- Skill Icon Alignment --- */
+.skill-tags span {
+    display: inline-flex; /* Keeps icon and text on same line */
+    align-items: center;  /* Vertically centers them */
+    gap: 8px;             /* Space between icon and text */
+}
+
+.skill-tags i {
+    font-size: 1.2rem;    /* Makes icons slightly larger than text */
+    transition: transform 0.3s ease;
+}
+
+/* Hover Animation: Icon spins slightly */
+.skill-tags span:hover i {
+    transform: scale(1.2);
+}
 /* --- Projects Section Redesign --- */
 
 .projects-grid {
